@@ -12,8 +12,8 @@ import {Open} from './open.component';
           <h4 class="modal-title text-center" id="myModalLabel">{{modalTitle}}</h4>
         </div>
         <div class="modal-body">
-        <div [hidden]=!content>
-        {{contentString}}
+        <div [hidden]=!modalMessage>
+        {{message}}
         </div>
           <div #child>
           </div>
@@ -70,13 +70,13 @@ export class Modal{
      */
   public cancelButtonText:string = 'Cancel';
   /**
-     * if the content is true it will show the contentString inside modal body.
+     * if the modalMessage is true it will show the message inside modal body.
      */
-  public content:boolean = true;
+  public modalMessage:boolean = true;
   /**
-     * Some message can be set in contentString which will be shown in modal body.
+     * Some message/content can be set in message which will be shown in modal body.
      */
-  public contentString:string;
+  public message:string;
   /**
     * if the value is true modal footer will be visible or else it will be hidden.
     */

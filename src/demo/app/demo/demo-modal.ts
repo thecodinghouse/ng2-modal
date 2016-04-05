@@ -38,8 +38,8 @@ export class Demo{
   modalOpen(){
     this.modal.modalTitle = "LOGIN";
     this.modal.modalFooter = false;
-    this.modal.content = true;
-    this.modal.contentString = "Here Login component will load.";
+    this.modal.modalMessage = true;
+    this.modal.message = "Here Login component will load.";
     this.modal.open(Login);
   }
   alertOpen(){
@@ -48,7 +48,7 @@ export class Demo{
     this.alert.okButton = false;
     this.alert.alertHeader = true;
     this.alert.alertTitle = "A simple Alert modal window";
-    this.alert.contentString = "Alert is a classic (title/body/footer) 1 button modal window";
+    this.alert.message = "Alert is a classic (title/body/footer) 1 button modal window";
     this.alert.cancelButtonText = "Ok, Got it.";
     this.alert.open();
   }
@@ -56,7 +56,7 @@ export class Demo{
     this.alert.cancelButton = true;
     this.alert.okButton = true;
     this.alert.alertTitle = "A simple Confirm modal window";
-    this.alert.contentString = "Confirm is a classic (title/body/footer) 2 button modal window";
+    this.alert.message = "Confirm is a classic (title/body/footer) 2 button modal window";
     this.alert.okButtonText = "Ok, Got it.";
     this.alert.cancelButtonText = "Close";
     this.alert.open();
