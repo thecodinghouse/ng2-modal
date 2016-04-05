@@ -7,7 +7,9 @@ An angular2 customizable modal using bootstrap.
 
 ng2-modal depends on bootstrap, you'll need to include below link before using ng2-modal:
 
-```<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">```
+```html
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+```
 
 
 ### How to use-
