@@ -5,7 +5,7 @@ An angular2 customizable modal using bootstrap.
 
 ### Dependencies
 
-ng2-modal depends on bootstrap, you'll need to include link before ng2-simple-modal:
+ng2-modal depends on bootstrap, you'll need to include below link before using ng2-modal:
 
 ```<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">```
 
@@ -18,23 +18,23 @@ ng2-modal depends on bootstrap, you'll need to include link before ng2-simple-mo
  
 ### Methods
 
- * ##### Modal
+ * ##### Modal Methods
       - `open(component?)`
     
-        Opens a modal. Component is optional. If the component is given it is loaded dynamically in 
+        Opens a modal and here the component is optional. If the component is given it is loaded dynamically in 
         modals body.
 
       - `close(data?)`
   
-      Close method first dispose the component if exist and then close the modal.It emits modalOutput.
-        This method emits modalOutput value i.e. data if it is given. It is called when cancel button is clicked.
+        Close method first dispose the component if it exist and then close the modal.This method emits
+        modalOutput value i.e. data,if it is given. It is called when cancel button is clicked.
 
       - `submit()`
  
-      submit method dispose the component and then close the modal. This method emits modalOutput value 
+        submit method dispose the component and then close the modal. This method emits modalOutput value 
         true to provide a callback. It is called when ok button is clicked.
  
- * ##### alert
+ * ##### Alert Methods
       - `open()`
  
         Open method opens a alert modal.
@@ -53,16 +53,16 @@ ng2-modal depends on bootstrap, you'll need to include link before ng2-simple-mo
  * ##### Modal Output
       - `modalOutput: EventEmitter`
   
-        Emits when ModalComponent.close() or ModalComponent.submit()  is called.
+        Emits when ModalComponent.close() or ModalComponent.submit() is called.
    
  * ##### Alert Output
       - `alertOutput: EventEmitter`
      
         Emits when AlertComponent.ok() is called.
 
-### Modal/Alert HeaderComponent
+### Header Properties
 
- * #####Modal Property
+ * #####Modal Properties
 
       - `modalHeader`: boolean, default:true
 
@@ -72,7 +72,7 @@ ng2-modal depends on bootstrap, you'll need to include link before ng2-simple-mo
 
         If modalHeader is true you can specify title in modalTitle.
 
- * #####Alert Property
+ * #####Alert Properties
 
       - `alertHeader`: boolean, default:true
 
@@ -83,9 +83,9 @@ ng2-modal depends on bootstrap, you'll need to include link before ng2-simple-mo
         If alertHeader is true you can specify title in alertTitle.
    
    
-### Modal/Alert BodyComponent
+### Body Properties
 
- * #####Modal Property
+ * #####Modal Properties
 
       - `content`: boolean, default: true
 
@@ -95,7 +95,7 @@ ng2-modal depends on bootstrap, you'll need to include link before ng2-simple-mo
 
         If content is true you can specify content/message that is to be shown in modal body.
 
- * #####Alert Property
+ * #####Alert Properties
 
       - `content`: boolean, default: true
 
@@ -105,9 +105,9 @@ ng2-modal depends on bootstrap, you'll need to include link before ng2-simple-mo
 
         If content is true you can specify content/message that is to be shown in alert body.
    
-### Modal/Alert FooterComponent
+### Footer Properties
 
- * #####Modal Property
+ * #####Modal Properties
 
       - `modalFooter`: boolean, default:true
 
@@ -129,10 +129,10 @@ ng2-modal depends on bootstrap, you'll need to include link before ng2-simple-mo
 
         If cancelButton is true you can specify text of the button in cancelButtonText.
    
- * #####Alert Property
+ * #####Alert Properties
 
       - `alertFooter`: boolean, default:true
 
         Show or hide the footer. Specify true to show.
 
-      - `okButton, okButtonText, cancelButton, cancelButtonText` is same as modal footer component.
+      - `okButton, okButtonText, cancelButton, cancelButtonText` is same as modal footer properties.
