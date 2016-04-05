@@ -42,16 +42,18 @@ export class Demo{
     this.modal.message = "Here Login component will load.";
     this.modal.open(Login);
   }
+
   alertOpen(){
     this.alert.alertFooter = true;
     this.alert.cancelButton = true;
     this.alert.okButton = false;
     this.alert.alertHeader = true;
     this.alert.alertTitle = "A simple Alert modal window";
-    this.alert.message = "Alert is a classic (title/body/footer) 1 button modal window";
+    this.alert.message = "It is a classic Alert modal with title, body, footer.";
     this.alert.cancelButtonText = "Ok, Got it.";
     this.alert.open();
   }
+
   confirmOpen(){
     this.alert.cancelButton = true;
     this.alert.okButton = true;
