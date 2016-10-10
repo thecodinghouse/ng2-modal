@@ -1,4 +1,5 @@
-import {Component, ViewEncapsulation, ComponentRef, DynamicComponentLoader,ElementRef, Input, EventEmitter, Output} from 'angular2/core';
+import 'reflect-metadata';
+import {Component, ComponentResolver, ViewChild, ViewContainerRef, ViewEncapsulation, ComponentRef, DynamicComponentLoader,ElementRef, Input, EventEmitter, Output} from '@angular/core';
 import {Open} from './open.component';
 
 @Component({
@@ -93,8 +94,10 @@ export class Modal{
     * Emitted when a ok button was clicked
     * or when close method is called.
     */
+  cmpRef:ComponentRef<any>;
+  @ViewChild("child", {read: ViewContainerRef}) target;
   @Output() public modalOutput:EventEmitter<any> = new EventEmitter();
-  constructor(public dcl:DynamicComponentLoader, public _elementRef: ElementRef){
+  constructor(public compiler: ComponentResolver, public viewContainer: ViewContainerRef){
   }
   /**
        * Opens a modal window creating backdrop.
@@ -102,8 +105,12 @@ export class Modal{
        */
   open(component?){
     this.isOpen= true;
+    if(this.cmpRef) {
+      this.cmpRef.destroy();
+    }
     if(component){
-    this.component = this.dcl.loadIntoLocation(component, this._elementRef, "child");
+        this.compiler.resolveComponent(component).then((factory) => 
+            this.cmpRef = this.target.createComponent(factory));
     }
   }
   /**
@@ -128,8 +135,8 @@ export class Modal{
   dispose(){
     this.isOpen = false;
     if(this.component != undefined){
-           this.component.then((componentRef:ComponentRef) => {
-           componentRef.dispose();
+           this.component.then((componentRef:ComponentRef<any>) => {
+           componentRef.destroy();
            return componentRef;
          });
         }
